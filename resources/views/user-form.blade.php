@@ -1,4 +1,10 @@
 <div>
+    <div>
+        @if(@session('success'))
+        <p style="color: green">{{session('success')}}</p>
+        
+        @endif
+    </div>
     <h1>Add New user Here</h1>
     <form action="addUser" method="post">
         @csrf
