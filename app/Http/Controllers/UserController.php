@@ -13,7 +13,7 @@ class UserController extends Controller
         $validated = $request->validate([
             'username' => 'required|max:255',
             'email' => 'required|email',
-            'city' => 'required',
+            'city' => 'required|uppercase',
             'skill' => 'required|array', // Ensure skill is an array
             'skill.*' => 'in:php,java,python', // Validate each skill value
         ], [
