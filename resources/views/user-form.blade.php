@@ -1,12 +1,12 @@
 <div>
     <!-- Display validation errors -->
-    @if($errors->any())
+    {{-- @if($errors->any())
         <div style="color: red; font-weight: bold;">
             @foreach ($errors->all() as $error)
                 <div>{{ $error }}</div>
             @endforeach
         </div>
-    @endif
+    @endif --}}
 
     <h1 style="color: #333;">Add New User Here</h1>
     <form action="addUser" method="post">
@@ -14,21 +14,27 @@
 
         <div class="input-form">
             <input type="text" placeholder="Enter username" name="username" value="{{ old('username') }}">
+            <span style="color:red;">@error('username'){{$message}}@enderror</span>
         </div>
         <div class="input-form">
             <input type="text" placeholder="Enter city" name="city" value="{{ old('city') }}">
+            <span style="color:red;">@error('city'){{$message}}@enderror</span>
         </div>
         <div class="input-form">
             <input type="email" placeholder="Enter email" name="email" value="{{ old('email') }}">
+            <span style="color:red;">@error('email'){{$message}}@enderror</span>
         </div>
         <div>
+            <span style="color:red;">@error('skill'){{$message}}@enderror</span>
             <h4 style="color: #333;">User Skills</h4>
             <input type="checkbox" name="skill[]" id="php" value="php">
+            
             <label for="php">PHP</label>
             <input type="checkbox" name="skill[]" id="java" value="java">
             <label for="java">JAVA</label>
             <input type="checkbox" name="skill[]" id="python" value="python">
             <label for="python">PYTHON</label>
+            
         </div>
         <div class="input-form">
             <button type="submit">Add New User</button>

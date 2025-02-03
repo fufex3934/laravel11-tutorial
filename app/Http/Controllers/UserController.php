@@ -13,7 +13,9 @@ class UserController extends Controller
         $validated = $request->validate([
             'username' => 'required|max:255',
             'email' => 'required|email',
-            'city' => 'required'
+            'city' => 'required',
+            'skill' => 'required|array', // Ensure skill is an array
+            'skill.*' => 'in:php,java,python', // Validate each skill value
         ]);
     
         // If validation passes, handle your logic here, like saving the user
