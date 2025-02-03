@@ -16,12 +16,13 @@ class UserController extends Controller
             'city' => 'required',
             'skill' => 'required|array', // Ensure skill is an array
             'skill.*' => 'in:php,java,python', // Validate each skill value
+        ], [
+            'username.required' => "username should not be empty"
         ]);
-    
+
         // If validation passes, handle your logic here, like saving the user
-    
+
         // For now, redirect back with success message (you can replace this with actual logic)
         return redirect()->back()->with('success', 'User added successfully!');
     }
-    
 }

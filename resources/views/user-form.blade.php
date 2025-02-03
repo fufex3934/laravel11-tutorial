@@ -13,29 +13,20 @@
         @csrf
 
         <div class="input-form">
-            <input type="text" placeholder="Enter username" name="username" value="{{ old('username') }}">
+            <input type="text" placeholder="Enter username" name="username" value="{{ old('username') }}"
+            class="{{$errors->first('username')?'input-error':''}}"
+            >
             <span style="color:red;">@error('username'){{$message}}@enderror</span>
         </div>
         <div class="input-form">
-            <input type="text" placeholder="Enter city" name="city" value="{{ old('city') }}">
+            <input type="text" placeholder="Enter city" name="city" value="{{ old('city') }}"  class="{{$errors->first('city')?'input-error':''}}">
             <span style="color:red;">@error('city'){{$message}}@enderror</span>
         </div>
         <div class="input-form">
-            <input type="email" placeholder="Enter email" name="email" value="{{ old('email') }}">
+            <input type="email" placeholder="Enter email" name="email" value="{{ old('email') }}"  class="{{$errors->first('email')?'input-error':''}}">
             <span style="color:red;">@error('email'){{$message}}@enderror</span>
         </div>
-        <div>
-            <span style="color:red;">@error('skill'){{$message}}@enderror</span>
-            <h4 style="color: #333;">User Skills</h4>
-            <input type="checkbox" name="skill[]" id="php" value="php">
-            
-            <label for="php">PHP</label>
-            <input type="checkbox" name="skill[]" id="java" value="java">
-            <label for="java">JAVA</label>
-            <input type="checkbox" name="skill[]" id="python" value="python">
-            <label for="python">PYTHON</label>
-            
-        </div>
+       
         <div class="input-form">
             <button type="submit">Add New User</button>
         </div>
@@ -107,5 +98,9 @@
         font-size: 14px;
         margin-right: 10px;
         color: #333;
+    }
+    .input-error{
+        border: 1px solid red;
+        color: red
     }
 </style>
