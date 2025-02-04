@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function show(){
-        return to_route('hm');
+        return 'Show students';
+    }
+    public function add(){
+        return 'add students';
     }
 }
