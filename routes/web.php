@@ -9,23 +9,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('home', 'home')->name('hm');
-Route::get('show', [HomeController::class, 'show']);
+Route::view('home', 'home')->middleware('check1');
 
-//route group with prefix
-Route::prefix('student')->group(function () {
-    Route::view('home', 'home');
-    Route::get('show', [HomeController::class, 'show']);
-    Route::get('add', [HomeController::class, 'add']);
-});
-
-//route group with controller
-
-
-Route::controller(StudentController::class)->group(function () {
-
-    Route::get('show', 'show');
-    Route::get('add', 'add');
-    Route::get('delete', 'delete');
-    Route::get('about/{name}', 'about');
+Route::middleware('check1')->group(function () {
+    Route::view('about', 'about');
+    Route::view('contact', 'about');
+    Route::view('user', 'about');
 });
