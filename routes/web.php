@@ -9,7 +9,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('home/profile/user', 'home')->name('hm');
+Route::view('home', 'home')->name('hm');
 Route::get('show', [HomeController::class, 'show']);
 
 //route group with prefix
