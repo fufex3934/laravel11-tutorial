@@ -9,10 +9,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('home', 'home')->middleware('check1');
-
-Route::middleware('check1')->group(function () {
-    Route::view('about', 'about');
-    Route::view('contact', 'about');
-    Route::view('user', 'about');
-});
+Route::get('users',[UserController::class,'user']);
