@@ -19,7 +19,7 @@ class UserController extends Controller
     }
     public function queries()
     {
-        $response = User::get();
-        return view('users',['users' => $response]);
+      
+        return 'This is get method';
     }
 }

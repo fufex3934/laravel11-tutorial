@@ -1,17 +1,10 @@
 <div>
-   <h1>Users List</h1>
-  <table border="1" style="border-collapse: collapse">
-    <tr>
-        <td>Name</td>
-        <td>Email</td>
-        <td>Password</td>
-    </tr>
-    @foreach ($users as $user)
-        <tr>
-            <td>{{$user->name}}</td>
-            <td>{{$user->email}}</td>
-            <td>{{$user->password}}</td>
-        </tr>
-    @endforeach
-  </table>
+   <h1>User Form</h1>
+   <form action="" method="GET">
+    <input type="text" name="user" placeholder="enter name">
+    <br><br>
+    <input type="password" name="password" placeholder="enter password">
+    <br><br>
+    <input type="submit" value="Submit">
+   </form>
 </div>

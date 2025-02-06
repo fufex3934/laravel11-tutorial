@@ -10,4 +10,4 @@ Route::get('/', function () {
 });
 
 Route::get('users',[UserController::class,'queries']);
-Route::get('students',[StudentController::class,'getStudent']);
+Route::view('form','form');
