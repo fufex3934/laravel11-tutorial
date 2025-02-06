@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\DB;
-
-
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -21,5 +20,12 @@ class UserController extends Controller
     {
       
         return 'This is get method';
+    }
+    function login(Request $request){
+        echo $request->method();
+        echo "<br>";
+        echo $request->path();
+        echo "<br>";
+        echo $request->input('password');
     }
 }

@@ -11,3 +11,4 @@ Route::get('/', function () {
 
 Route::get('users',[UserController::class,'queries']);
 Route::view('form','form');
+Route::post('login',[UserController::class,'login']);
