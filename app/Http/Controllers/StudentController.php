@@ -2,25 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
     //
-    public function show()
+    public function getStudent()
     {
-        return "List of student";
+        $students =Student::all();
+        return view('students',['students' => $students]);
     }
-    public function add()
-    {
-        return "student add";
-    }
-    public function delete()
-    {
-        return "student delete";
-    }
-    public function about($name)
-    {
-        return $name;
-    }
+    
 }
