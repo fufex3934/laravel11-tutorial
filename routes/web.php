@@ -9,5 +9,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('users',[UserController::class,'getUser']);
+Route::get('users',[UserController::class,'queries']);
 Route::get('students',[StudentController::class,'getStudent']);
