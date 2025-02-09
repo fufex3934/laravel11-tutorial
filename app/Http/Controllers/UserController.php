@@ -9,18 +9,8 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function getUser()
-
-    {
-        $response = Http::get('https://jsonplaceholder.typicode.com/users/1');
-        $response = $response->body();
-        return view('users', ['data' => json_decode($response)]);
-    }
-    public function queries()
-    {
-
-        return 'This is get method';
-    }
+   
+    
 
     function login(Request $request)
     {
@@ -32,4 +22,11 @@ class UserController extends Controller
         session()->pull('user');
         return redirect('profile');
     }
+    public function addUser(Request $request)
+{
+    
+    // Redirect with a success message
+    return redirect('users')->with('message', 'User has been added successfully');
+}
+
 }
