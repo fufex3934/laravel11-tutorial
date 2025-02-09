@@ -10,5 +10,7 @@ Route::get('/', function () {
 });
 
 Route::get('users',[UserController::class,'queries']);
-Route::view('form','form');
+Route::view('login','login');
+Route::view('profile','profile');
 Route::post('login',[UserController::class,'login']);
+Route::get('logout',[UserController::class,'logout']);

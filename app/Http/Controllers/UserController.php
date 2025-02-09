@@ -18,14 +18,18 @@ class UserController extends Controller
     }
     public function queries()
     {
-      
+
         return 'This is get method';
     }
-    function login(Request $request){
-        echo $request->method();
-        echo "<br>";
-        echo $request->path();
-        echo "<br>";
-        echo $request->input('password');
+
+    function login(Request $request)
+    {
+        $request->session()->put('user', $request->input('user'));
+        return redirect('profile');
+    }
+    function logout()
+    {
+        session()->pull('user');
+        return redirect('profile');
     }
 }
